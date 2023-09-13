@@ -11,7 +11,7 @@ def get_column_names(cursor):
 
 def get_connections(db_name, db_user, db_pass, db_host, db_port):
     db_string = 'postgresql://{}:{}@{}:{}/{}'.format(db_user, db_pass, db_host, db_port, db_name)
-    conn = psycopg2.connect(db_string)
+    conn = psycopg2.connect(db_name)
     cursor = conn.cursor()
 
     return cursor
